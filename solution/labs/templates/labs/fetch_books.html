@@ -1,0 +1,21 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 04 | Fetch dan DOM{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 04 · FETCH DAN DOM</p>
+<h1>Ambil data buku tanpa me-refresh halaman.</h1>
+<div class="instruction-box">
+    Perhatikan penggunaan <code>await</code>, <code>response.ok</code>,
+    <code>response.json()</code>, dan <code>textContent</code> pada
+    <code>fetch_books.js</code>. Periksa request pada tab <strong>Network</strong>.
+</div>
+<button id="load-books" type="button">Muat Buku</button>
+<p id="book-status" class="status" aria-live="polite">Belum ada request.</p>
+<ul id="book-list" class="result-list"></ul>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'labs/js/fetch_books.js' %}"></script>
+{% endblock %}

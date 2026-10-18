@@ -1,0 +1,40 @@
+{% extends "labs/base.html" %}
+
+{% block title %}Dashboard | PBP UTS Latihan{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <p class="eyebrow">VERSI SOLUTION</p>
+    <h1>Amati solusi, bandingkan, lalu jelaskan.</h1>
+    <p>
+        Seluruh perbaikan sudah diterapkan. Bandingkan file pada folder
+        <code>solution</code> dengan <code>template</code> dan pahami alasan setiap perubahan.
+    </p>
+</section>
+
+<section class="notice">
+    <strong>Mulai dari README.</strong>
+    Jalankan <code>python manage.py seed_latihan</code> sebelum mengerjakan ORM,
+    authorization, dan pencarian.
+</section>
+
+<section>
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">12 LATIHAN</p>
+            <h2>Pilih eksperimen</h2>
+        </div>
+        <span class="badge">Semua solusi sudah diterapkan</span>
+    </div>
+    <div class="latihan-grid">
+        {% for number, title, url, check in latihan_list %}
+        <article class="latihan-card">
+            <span class="latihan-number">LATIHAN {{ number }}</span>
+            <h3>{{ title }}</h3>
+            <p>{{ check }}</p>
+            <a href="{{ url }}">Buka latihan →</a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

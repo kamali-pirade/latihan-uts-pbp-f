@@ -1,0 +1,24 @@
+{% extends "labs/base.html" %}
+
+{% block title %}Latihan 11 | Session dan Cookie{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 11 · SESSION DAN COOKIE</p>
+<h1>Amati state yang tersimpan di server dan browser.</h1>
+<div class="metric-grid">
+    <div class="metric"><strong>{{ visits }}</strong><span>kunjungan dalam session</span></div>
+    <div class="metric"><strong>{{ theme }}</strong><span>nilai cookie saat request ini</span></div>
+</div>
+<div class="instruction-box">
+    <ol>
+        <li>Refresh halaman beberapa kali.</li>
+        <li>Buka DevTools → Application/Storage → Cookies.</li>
+        <li>Bandingkan cookie <code>sessionid</code> dan <code>latihan_theme</code>.</li>
+        <li>Hapus salah satunya dan amati perubahan request berikutnya.</li>
+    </ol>
+</div>
+<form action="{% url 'latihan:reset_session' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="danger-button">Reset session dan cookie demo</button>
+</form>
+{% endblock %}

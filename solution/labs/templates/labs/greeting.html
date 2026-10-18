@@ -1,0 +1,10 @@
+{% extends "labs/base.html" %}
+
+{% block title %}Latihan 02 | Greeting{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 02 · URL, VIEW, TEMPLATE</p>
+<!-- Django meng-escape nilai context secara default sebelum memasukkannya ke HTML. -->
+<h1>Halo, {{ name }}!</h1>
+<p>Ganti nama pada URL untuk melihat parameter yang berbeda diteruskan ke template.</p>
+{% endblock %}

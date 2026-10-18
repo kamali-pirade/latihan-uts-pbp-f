@@ -1,0 +1,26 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 06 | Debug Fetch{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 06 · DEBUG FETCH</p>
+<h1>Temukan masalah asynchronous dan penanganan HTTP error.</h1>
+<div class="instruction-box">
+    Solusi menunggu Promise, memeriksa <code>response.ok</code>, dan menangani
+    kegagalan dengan <code>try/catch</code>. Bandingkan kedua tombol melalui Network.
+</div>
+<div class="button-row">
+    <button id="load-profile" type="button" data-url="{% url 'latihan:profile_api' %}">Muat profil</button>
+    <button id="load-error" type="button" data-url="{% url 'latihan:profile_api' %}?mode=error">Simulasikan 500</button>
+</div>
+<p id="profile-status" class="status">Belum ada request.</p>
+<dl>
+    <dt>Nama</dt><dd id="profile-name">-</dd>
+    <dt>Peran</dt><dd id="profile-role">-</dd>
+</dl>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'labs/js/debug_fetch.js' %}"></script>
+{% endblock %}

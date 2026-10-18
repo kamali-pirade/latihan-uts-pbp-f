@@ -1,0 +1,26 @@
+{% extends "labs/base.html" %}
+
+{% block title %}Login | PBP UTS Latihan{% endblock %}
+
+{% block content %}
+<p class="eyebrow">AUTENTIKASI DJANGO</p>
+<h1>Login untuk Latihan 09</h1>
+<p>Gunakan salah satu akun latihan berikut:</p>
+<ul>
+    <li><code>alice / latihan123</code></li>
+    <li><code>bob / latihan123</code></li>
+</ul>
+
+{% if form.errors %}
+<div class="warning-box">Username atau password tidak sesuai.</div>
+{% endif %}
+
+<form method="post" class="stacked-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if next %}
+        <input type="hidden" name="next" value="{{ next }}">
+    {% endif %}
+    <button type="submit">Login</button>
+</form>
+{% endblock %}

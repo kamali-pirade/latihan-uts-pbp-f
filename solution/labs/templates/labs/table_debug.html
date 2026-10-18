@@ -1,0 +1,36 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 08 | Debug Tabel{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 08 · STRUKTUR TABEL</p>
+<h1>Gunakan struktur HTML yang benar sebelum memanipulasi DOM.</h1>
+<div class="instruction-box">
+    Struktur solution secara eksplisit memakai <code>thead</code>, <code>tbody</code>,
+    <code>tr</code>, <code>th</code>, dan <code>td</code>. Bandingkan dengan koreksi
+    otomatis browser pada versi template.
+</div>
+
+<table id="product-table">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Harga</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Laptop</td>
+            <td>15000000</td>
+        </tr>
+    </tbody>
+</table>
+
+<button id="add-row" type="button">Tambahkan Mouse</button>
+<p id="table-status" class="status">Tekan tombol untuk menambah baris ke tbody.</p>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'labs/js/table_debug.js' %}"></script>
+{% endblock %}

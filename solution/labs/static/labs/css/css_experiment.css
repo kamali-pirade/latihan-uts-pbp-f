@@ -1,0 +1,31 @@
+.selector-playground {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 2px dashed #8ea6da;
+    border-radius: 16px;
+    background: white;
+}
+
+.selector-playground p::after {
+    content: "  [" attr(data-label) "]";
+    color: #667085;
+    font-size: 0.8rem;
+}
+
+/* Descendant selector memilih seluruh <p> di dalam article, termasuk yang
+   berada lebih dalam di dalam <section>. */
+article p {
+    color: blue;
+}
+
+/* Child selector hanya memilih <p> yang parent langsungnya adalah article.
+   Karena specificity-nya sama dan aturan ini muncul belakangan, warna merah
+   mengalahkan warna biru pada paragraf direct child. */
+article > p {
+    color: red;
+}
+
+/* Adjacent sibling selector hanya memilih <p> pertama tepat setelah <h2>. */
+h2 + p {
+    font-weight: bold;
+}
