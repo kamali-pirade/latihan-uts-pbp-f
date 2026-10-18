@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}PBP UTS Latihan Eksperimen{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'labs/css/base.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="{% url 'latihan:home' %}">PBP UTS Latihan Eksperimen</a>
+        <nav>
+            <a href="{% url 'latihan:home' %}">Dashboard</a>
+        </nav>
+    </header>
+    <main class="page-shell">
+        {% block content %}{% endblock %}
+    </main>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
+

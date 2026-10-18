@@ -1,0 +1,21 @@
+{% extends "labs/base.html" %}
+
+{% block title %}Latihan 09 | Object Authorization{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 09 · OBJECT AUTHORIZATION</p>
+<h1>{{ document.title }}</h1>
+<dl>
+    <dt>Pemilik</dt><dd>{{ document.owner.username }}</dd>
+    <dt>Identitas simulasi</dt><dd>{{ simulated_user.username }}</dd>
+</dl>
+<div class="document-content">{{ document.content }}</div>
+<div class="warning-box">
+    View starter sengaja hanya mengecek primary key. Ganti parameter
+    <code>?as_user=alice</code>, ubah ID pada URL, lalu perbaiki query agar dokumen
+    pengguna lain menghasilkan 404. Parameter ini hanya simulasi untuk latihan lokal,
+    bukan sistem autentikasi.
+</div>
+<pre><code>python manage.py test labs.tests.test_latihan09_document_access</code></pre>
+{% endblock %}
+

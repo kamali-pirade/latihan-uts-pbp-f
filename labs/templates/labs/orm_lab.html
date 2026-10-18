@@ -1,0 +1,32 @@
+{% extends "labs/base.html" %}
+
+{% block title %}Latihan 03 | Django ORM{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 03 · DJANGO ORM</p>
+<h1>Bandingkan <code>all()</code>, <code>filter()</code>, dan <code>get()</code>.</h1>
+<div class="two-column">
+    <section class="panel">
+        <h2>Data saat ini</h2>
+        <ul>
+            {% for product in products %}
+                <li>{{ product.name }} — stok {{ product.stock }}</li>
+            {% empty %}
+                <li>Belum ada data. Jalankan <code>python manage.py seed_latihan</code>.</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="panel">
+        <h2>Coba di shell</h2>
+        <pre><code>python manage.py shell
+
+from labs.models import Product
+Product.objects.all()
+Product.objects.filter(stock__gt=0)
+Product.objects.filter(pk=999)
+Product.objects.get(pk=999)</code></pre>
+        <p>Catat hasil dan exception yang muncul.</p>
+    </section>
+</div>
+{% endblock %}
+

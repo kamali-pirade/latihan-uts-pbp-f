@@ -1,0 +1,26 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 12 | Alur Pencarian{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 12 · END-TO-END SEARCH FLOW</p>
+<h1>Ikuti alur browser → URL → view → model → JSON → DOM.</h1>
+<div class="instruction-box">
+    Lengkapi <code>search_flow.js</code>. API tersedia di
+    <code>{% url 'latihan:products_api' %}?q=...</code>. Tambahkan loading, empty state,
+    error handling, rendering hasil, dan debounce 500 ms.
+</div>
+<label for="product-search">Cari produk</label>
+<input id="product-search" type="search" placeholder="Contoh: mouse">
+<p id="search-flow-status" class="status">Mulai mengetik untuk mencari.</p>
+<div id="search-results" class="result-grid"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    window.PRODUCTS_API_URL = "{% url 'latihan:products_api' %}";
+</script>
+<script src="{% static 'labs/js/search_flow.js' %}"></script>
+{% endblock %}
+

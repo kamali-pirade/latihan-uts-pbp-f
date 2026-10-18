@@ -1,0 +1,32 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 08 | Debug Tabel{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 08 · STRUKTUR TABEL</p>
+<h1>Perbaiki struktur HTML sebelum memanipulasi DOM.</h1>
+<div class="instruction-box">
+    Periksa DOM hasil koreksi browser di tab Elements. Perbaiki template ini agar
+    memiliki <code>thead</code>, <code>tbody</code>, <code>tr</code>,
+    <code>th</code>, dan <code>td</code> yang benar.
+</div>
+
+<!-- TODO LATIHAN 08: markup berikut sengaja tidak valid. -->
+<table id="product-table">
+    <th>
+        <td>Nama</td>
+        <td>Harga</td>
+    </th>
+    <td>Laptop</td>
+    <td>15000000</td>
+</table>
+
+<button id="add-row" type="button">Tambahkan Mouse</button>
+<p id="table-status" class="status">Periksa Console setelah menekan tombol.</p>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'labs/js/table_debug.js' %}"></script>
+{% endblock %}
+

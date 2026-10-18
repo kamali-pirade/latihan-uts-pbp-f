@@ -1,0 +1,24 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 10 | Event Listener{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 10 · EVENT LISTENER</p>
+<h1>Satu selector menghasilkan banyak elemen.</h1>
+<div class="instruction-box">
+    Starter code mencoba memasang listener langsung pada NodeList. Perbaiki dengan
+    iterasi, lalu coba versi kedua menggunakan event delegation pada container.
+</div>
+<div id="button-container" class="button-stack">
+    <button class="remove-button" type="button">Hapus 1</button>
+    <button class="remove-button" type="button">Hapus 2</button>
+    <button class="remove-button" type="button">Hapus 3</button>
+</div>
+<p id="event-status" class="status">Buka Console untuk melihat error awal.</p>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'labs/js/event_debug.js' %}"></script>
+{% endblock %}
+
