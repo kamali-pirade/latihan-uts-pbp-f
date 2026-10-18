@@ -1,0 +1,26 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 05 | Debounce{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 05 · DEBOUNCE</p>
+<h1>Bandingkan input langsung dengan input yang ditunda.</h1>
+<div class="instruction-box">
+    Starter code masih memanggil fungsi pada setiap input. Lengkapi fungsi
+    <code>debounce()</code> dengan <code>clearTimeout()</code> dan
+    <code>setTimeout()</code>, lalu bandingkan counternya.
+</div>
+<label for="search-box">Ketik cepat beberapa karakter</label>
+<input id="search-box" type="text" placeholder="Cari produk">
+<div class="metric-grid">
+    <div class="metric"><strong id="raw-count">0</strong><span>input events</span></div>
+    <div class="metric"><strong id="handled-count">0</strong><span>pencarian dijalankan</span></div>
+</div>
+<p id="search-output" class="status">Belum mencari.</p>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'labs/js/debounce.js' %}"></script>
+{% endblock %}
+

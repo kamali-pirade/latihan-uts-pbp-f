@@ -1,0 +1,30 @@
+{% extends "labs/base.html" %}
+
+{% block title %}Latihan 07 | ModelForm{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 07 · DEBUG MODELFORM</p>
+<h1>Perbaiki binding, validasi, dan penyimpanan form.</h1>
+<div class="two-column">
+    <section class="panel">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Simpan produk</button>
+        </form>
+        <p class="hint">Setelah submit, cek apakah produk benar-benar muncul di database.</p>
+    </section>
+    <section class="panel">
+        <h2>Produk tersimpan</h2>
+        <ul>
+            {% for product in products %}
+                <li>{{ product.name }} — {{ product.stock }}</li>
+            {% empty %}
+                <li>Belum ada produk.</li>
+            {% endfor %}
+        </ul>
+        <pre><code>python manage.py test labs.tests.test_latihan07_product_form</code></pre>
+    </section>
+</div>
+{% endblock %}
+

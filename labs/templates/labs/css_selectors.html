@@ -1,0 +1,31 @@
+{% extends "labs/base.html" %}
+{% load static %}
+
+{% block title %}Latihan 01 | CSS Selector{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'labs/css/css_experiment.css' %}">
+{% endblock %}
+
+{% block content %}
+<p class="eyebrow">LATIHAN 01 · CSS SELECTOR</p>
+<h1>Bandingkan descendant, child, dan adjacent sibling.</h1>
+<div class="instruction-box">
+    <ol>
+        <li>Buka file <code>css_experiment.css</code>.</li>
+        <li>Aktifkan satu aturan pada satu waktu.</li>
+        <li>Periksa tab <strong>Elements → Styles</strong> di DevTools.</li>
+        <li>Gabungkan semua aturan dan jelaskan hasil akhirnya.</li>
+    </ol>
+</div>
+
+<article class="selector-playground">
+    <h2>Judul Artikel</h2>
+    <p data-label="direct-1">Paragraf pertama</p>
+    <section>
+        <p data-label="nested">Paragraf di dalam section</p>
+    </section>
+    <p data-label="direct-2">Paragraf terakhir</p>
+</article>
+{% endblock %}
+
